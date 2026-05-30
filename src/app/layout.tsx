@@ -31,6 +31,31 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${inter.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                function setVh() {
+                  var vh = window.innerHeight * 0.01;
+                  document.documentElement.style.setProperty('--vh', vh + 'px');
+                }
+                setVh();
+                
+                var lastWidth = window.innerWidth;
+                window.addEventListener('resize', function() {
+                  var currentWidth = window.innerWidth;
+                  var isMobile = window.innerWidth < 1024;
+                  if (!isMobile || currentWidth !== lastWidth) {
+                    setVh();
+                    lastWidth = currentWidth;
+                  }
+                });
+              })();
+            `
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col font-sans text-zinc-800 bg-white">
         <LoadingOverlay />
         <Navbar />
