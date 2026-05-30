@@ -79,7 +79,7 @@ export default function Home() {
             </div>
 
             <div className="border border-zinc-200 p-8 bg-white space-y-4" style={{ borderRadius: "0px" }}>
-              <span className="font-mono text-zinc-300 text-3xl font-light">03</span>
+              <span className="font-mono text-zinc-350 text-3xl font-light">03</span>
               <h3 className="text-xs font-bold text-zinc-800 uppercase tracking-widest">
                 Annual Maintenance Contracts
               </h3>
@@ -87,6 +87,21 @@ export default function Home() {
                 <strong className="font-bold text-zinc-800">Long-term performance stability.</strong> We offer dedicated AMC checkups for cookers, hobs, and hoods to ensure ongoing safety compliance.
               </p>
             </div>
+          </div>
+
+          <div className="pt-12 flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <Link
+              href="/shop"
+              className="matte-button-solid px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+            >
+              Browse Sourcing Catalog
+            </Link>
+            <Link
+              href="/contact"
+              className="matte-button px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+            >
+              Request Sourcing Call
+            </Link>
           </div>
         </div>
       </section>
@@ -237,12 +252,27 @@ export default function Home() {
             </div>
 
             <div className="border border-zinc-200 p-6 bg-white space-y-3" style={{ borderRadius: "0px" }}>
-              <span className="font-mono text-zinc-350 text-xl font-bold">5</span>
+              <span className="font-mono text-zinc-355 text-xl font-bold">5</span>
               <h4 className="text-[10px] font-bold text-zinc-800 uppercase tracking-widest">Handover</h4>
               <p className="text-xs md:text-sm leading-relaxed text-zinc-500">
                 We verify pressure settings, issue compliance certificates, and hand over the warranty.
               </p>
             </div>
+          </div>
+
+          <div className="pt-12 flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <Link
+              href="/contact"
+              className="matte-button-solid px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+            >
+              Start Procurement Inquiry
+            </Link>
+            <Link
+              href="/services"
+              className="matte-button px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+            >
+              Explore Custom Services
+            </Link>
           </div>
         </div>
       </section>
@@ -282,10 +312,25 @@ export default function Home() {
 
                 <div className="border border-zinc-200 p-6 bg-white hover:border-zinc-950 transition-all duration-300 space-y-2" style={{ borderRadius: "0px" }}>
                   <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-widest">Are products fully warrantied?</h4>
-                  <p className="text-xs md:text-sm leading-relaxed text-zinc-600 font-medium">
+                  <p className="text-xs md:text-sm leading-relaxed text-zinc-650 font-medium">
                     Yes. Every procured appliance is brand new, factory-sealed, and carries a <strong className="font-bold text-zinc-900">one-year manufacturer warranty</strong> supported by official regional service centers.
                   </p>
                 </div>
+              </div>
+
+              <div className="pt-8 flex flex-col sm:flex-row gap-4 max-w-md">
+                <Link
+                  href="/contact"
+                  className="matte-button-solid px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+                >
+                  Contact Support Desk
+                </Link>
+                <Link
+                  href="/services"
+                  className="matte-button px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+                >
+                  View Connection Details
+                </Link>
               </div>
             </div>
 

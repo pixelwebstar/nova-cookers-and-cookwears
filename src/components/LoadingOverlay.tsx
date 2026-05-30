@@ -9,26 +9,61 @@ export default function LoadingOverlay() {
   useEffect(() => {
     // Check if site has already loaded in this browser session
     const hasLoaded = sessionStorage.getItem("nova_loaded");
-    if (!hasLoaded) {
-      setMounted(true);
-      setVisible(true);
+    if (hasLoaded) {
+      return;
+    }
 
-      // Start fade-out transition after 1.8 seconds
-      const fadeTimer = setTimeout(() => {
+    // If document is already fully loaded, skip loading animation
+    if (document.readyState === "complete") {
+      sessionStorage.setItem("nova_loaded", "true");
+      return;
+    }
+
+    let loadFired = false;
+    let fadeTimer: NodeJS.Timeout;
+    let unmountTimer: NodeJS.Timeout;
+
+    // Show loader after 500ms if page load has not completed yet
+    const showLoaderTimer = setTimeout(() => {
+      if (!loadFired) {
+        setMounted(true);
+        setVisible(true);
+      }
+    }, 500);
+
+    const handleLoad = () => {
+      loadFired = true;
+      clearTimeout(showLoaderTimer);
+
+      // Add a slight minimum display delay (800ms) to ensure the luxury loader
+      // rotates smoothly without flickering, then fade out.
+      fadeTimer = setTimeout(() => {
         setVisible(false);
         sessionStorage.setItem("nova_loaded", "true");
-      }, 1800);
+      }, 800);
 
-      // Unmount overlay after transition completes (2.5 seconds total)
-      const unmountTimer = setTimeout(() => {
+      unmountTimer = setTimeout(() => {
         setMounted(false);
-      }, 2500);
+      }, 1800); // 800ms delay + 1000ms transition duration
+    };
 
-      return () => {
-        clearTimeout(fadeTimer);
-        clearTimeout(unmountTimer);
-      };
-    }
+    // Listen for window load
+    window.addEventListener("load", handleLoad);
+
+    // Fallback: in case the load event doesn't fire, ensure the page is interactive after 5s
+    const fallbackTimer = setTimeout(() => {
+      if (!loadFired) {
+        handleLoad();
+      }
+    }, 5000);
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+      clearTimeout(showLoaderTimer);
+      clearTimeout(fallbackTimer);
+      if (fadeTimer) clearTimeout(fadeTimer);
+      if (unmountTimer) clearTimeout(unmountTimer);
+    };
   }, []);
 
   if (!mounted) return null;

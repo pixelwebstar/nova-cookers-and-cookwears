@@ -14,9 +14,14 @@
   }
 }
 
+html {
+  scroll-padding-top: var(--navbar-height);
+  scroll-behavior: smooth;
+}
+
 /* Full-screen hero that accounts for browser chrome (address bar) via dvh */
 .hero-fullscreen {
-  min-height: calc(100dvh - var(--navbar-height));
+  min-height: 100dvh;
   padding-top: var(--navbar-height);
 }
 

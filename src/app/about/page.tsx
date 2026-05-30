@@ -5,7 +5,7 @@ export default function AboutUs() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Section 1: Hero Section (White background) - Image LEFT, Text RIGHT */}
-      <section className="relative border-b border-zinc-200 bg-white lg:h-screen lg:min-h-[700px] pt-32 lg:pt-20 grid grid-cols-1 lg:grid-cols-2 items-stretch overflow-hidden">
+      <section className="hero-fullscreen relative border-b border-zinc-200 bg-white grid grid-cols-1 lg:grid-cols-2 items-stretch overflow-hidden">
         {/* Image Column - Left on Desktop, First on Mobile */}
         <div className="order-1 lg:order-1 relative min-h-[260px] lg:h-full bg-zinc-200">
           <Image
@@ -28,6 +28,20 @@ export default function AboutUs() {
           <p className="text-base md:text-lg leading-relaxed text-zinc-650 font-sans max-w-xl">
             Direct partnerships with premium distributors across Sharjah and Dubai. Order-based sourcing prevents inventory overheads and ensures factory-sealed quality.
           </p>
+          <div className="pt-2 flex flex-col sm:flex-row gap-4 max-w-lg">
+            <Link
+              href="/shop"
+              className="matte-button-solid px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+            >
+              Browse Sourcing Catalog
+            </Link>
+            <Link
+              href="/contact"
+              className="matte-button px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+            >
+              Contact Sourcing Desk
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -70,6 +84,21 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
+
+          <div className="pt-12 flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <Link
+              href="/contact"
+              className="matte-button-solid px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+            >
+              Schedule Depot Sourcing
+            </Link>
+            <Link
+              href="/shop"
+              className="matte-button px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+            >
+              Read Sourcing Guides
+            </Link>
+          </div>
         </div>
       </section>      {/* Section 3: Technical Alliance (White background) - Text LEFT, Image RIGHT */}
       <section className="border-b border-zinc-200 py-20 bg-white min-h-[70vh] flex flex-col justify-center">
@@ -85,9 +114,12 @@ export default function AboutUs() {
               <p className="text-sm md:text-base leading-relaxed text-zinc-650 font-sans">
                 <strong className="font-bold text-zinc-900">Certified technical connection is vital.</strong> We partner exclusively with DAKEEK Technical Services Co. LLC to provide UAE Civil Defense compliant gas regulator fittings, pressure leak verification, and high-power electric stove line routing.
               </p>
-              <div className="pt-2">
-                <Link href="/services" className="matte-button px-6 py-3 text-xs font-bold uppercase tracking-wider inline-block">
+              <div className="pt-2 flex flex-col sm:flex-row gap-4 max-w-md">
+                <Link href="/services" className="matte-button-solid px-6 py-4 text-xs font-bold uppercase tracking-wider text-center flex-1">
                   Explore Connection Services
+                </Link>
+                <Link href="/services" className="matte-button px-6 py-4 text-xs font-bold uppercase tracking-wider text-center flex-1">
+                  Submit Installation Inquiry
                 </Link>
               </div>
             </div>
@@ -162,6 +194,21 @@ export default function AboutUs() {
               </p>
             </div>
           </div>
+
+          <div className="pt-12 flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <Link
+              href="/contact"
+              className="matte-button-solid px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+            >
+              Partner With Us
+            </Link>
+            <Link
+              href="/shop"
+              className="matte-button px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+            >
+              Browse Active Catalog
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -223,6 +270,21 @@ export default function AboutUs() {
                     Imports clear Dubai Customs with official safety inspections and customs duty settlements.
                   </p>
                 </div>
+              </div>
+
+              <div className="pt-8 flex flex-col sm:flex-row gap-4 max-w-md">
+                <Link
+                  href="/contact"
+                  className="matte-button-solid px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+                >
+                  Verify Sourcing Credentials
+                </Link>
+                <Link
+                  href="/services"
+                  className="matte-button px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+                >
+                  Check VAT Guidelines
+                </Link>
               </div>
             </div>
           </div>

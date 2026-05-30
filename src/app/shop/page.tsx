@@ -56,7 +56,7 @@ function ShopCatalog() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Section 1: Catalog Header / Hero (White background) - Text LEFT, Image RIGHT */}
-      <section className="relative border-b border-zinc-200 bg-white lg:h-screen lg:min-h-[700px] pt-32 lg:pt-20 grid grid-cols-1 lg:grid-cols-2 items-stretch overflow-hidden">
+      <section className="hero-fullscreen relative border-b border-zinc-200 bg-white grid grid-cols-1 lg:grid-cols-2 items-stretch overflow-hidden">
         {/* Text Column - Left on Desktop, Second on Mobile */}
         <div className="order-2 lg:order-1 flex flex-col justify-center px-6 md:px-12 lg:px-20 py-10 lg:py-24 space-y-4 lg:space-y-6">
           <span className="text-[10px] tracking-[0.25em] font-bold text-zinc-400 uppercase">
@@ -68,6 +68,25 @@ function ShopCatalog() {
           <p className="text-base md:text-lg leading-relaxed text-zinc-650 font-sans max-w-xl">
             Order-based pricing strategy for premium imported kitchen appliances. Select your brand or category to view specifications.
           </p>
+          <div className="pt-2 flex flex-col sm:flex-row gap-4 max-w-lg">
+            <button
+              onClick={() => {
+                const element = document.getElementById("catalog-section");
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              className="matte-button-solid px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1 cursor-pointer"
+            >
+              Browse Sourcing Catalog
+            </button>
+            <Link
+              href="/contact"
+              className="matte-button px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+            >
+              Request Sourcing Call
+            </Link>
+          </div>
         </div>
 
         {/* Image Column - Right on Desktop, First on Mobile */}
@@ -83,7 +102,7 @@ function ShopCatalog() {
       </section>
 
       {/* Section 2: Main Catalog Search & Filter Layout (Cream background) */}
-      <section className="border-b border-zinc-200 py-12 md:py-20 bg-[#FAF9F6] min-h-[70vh] flex flex-col justify-center">
+      <section id="catalog-section" className="border-b border-zinc-200 py-12 md:py-20 bg-[#FAF9F6] min-h-[70vh] flex flex-col justify-center">
         <div className="max-w-7xl mx-auto px-4 md:px-12 w-full">
           {/* Subheader / Status Bar */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-zinc-200 mb-6 gap-2">
@@ -364,6 +383,21 @@ function ShopCatalog() {
                   </p>
                 </div>
               </div>
+
+              <div className="pt-8 flex flex-col sm:flex-row gap-4 max-w-md">
+                <Link
+                  href="/about"
+                  className="matte-button-solid px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+                >
+                  Learn Sourcing Protocols
+                </Link>
+                <Link
+                  href="/contact"
+                  className="matte-button px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+                >
+                  Submit Sourcing Inquiry
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -383,9 +417,12 @@ function ShopCatalog() {
               <p className="text-sm md:text-base leading-relaxed text-zinc-650 font-sans">
                 <strong className="font-bold text-zinc-900">Every range cooker, built-in gas hob, and high-power electric oven</strong> requires professional connection. DAKEEK engineers handle regulator fittings and dedicated wiring, providing official Civil Defense sign-offs.
               </p>
-              <div className="pt-2">
-                <Link href="/services" className="matte-button px-6 py-3 text-xs font-bold uppercase tracking-wider inline-block">
+              <div className="pt-2 flex flex-col sm:flex-row gap-4 max-w-md">
+                <Link href="/services" className="matte-button-solid px-6 py-4 text-xs font-bold uppercase tracking-wider text-center flex-1">
                   View Service Packages
+                </Link>
+                <Link href="/contact" className="matte-button px-6 py-4 text-xs font-bold uppercase tracking-wider text-center flex-1">
+                  Inquire via Sourcing Desk
                 </Link>
               </div>
             </div>
