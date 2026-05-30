@@ -18,7 +18,7 @@ export default function AboutUs() {
         </div>
 
         {/* Text Column - Right on Desktop, Second on Mobile */}
-        <div className="order-2 lg:order-2 flex flex-col justify-center px-6 md:px-12 lg:px-20 py-10 lg:py-24 space-y-4 lg:space-y-6">
+        <div className="order-2 lg:order-2 flex flex-col justify-center items-center text-center px-6 md:px-12 lg:px-20 py-10 lg:py-24 space-y-4 lg:space-y-6">
           <span className="text-[10px] tracking-[0.25em] font-bold text-zinc-400 uppercase">
             NOVA Cookers &amp; Cookstove Trading
           </span>
