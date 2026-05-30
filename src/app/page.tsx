@@ -89,67 +89,94 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 2: Direct Sourcing Values (Cream background) */}
-      <section className="border-b border-zinc-200 bg-[#FAF9F6] min-h-[100dvh] flex flex-col justify-center py-20">
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
-          <div className="text-center max-w-xl mx-auto mb-16 space-y-4">
-            <span className="text-[10px] tracking-[0.2em] font-bold text-zinc-400 uppercase">
+      {/* Section 2: Direct Sourcing Values (Cream background) - Optimized Z-Pattern Layout */}
+      <section className="border-b border-zinc-200 bg-[#FAF9F6] min-h-[100dvh] flex flex-col justify-center py-16 lg:py-20">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
+          {/* 1. Top-Left: Main Heading & Value Focus */}
+          <div className="flex flex-col justify-center space-y-4 lg:space-y-6">
+            <span className="text-[10px] tracking-[0.25em] font-bold text-zinc-400 uppercase">
               Value Focus
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl tracking-tight text-zinc-900">
+            <h2 className="font-serif text-4xl md:text-5xl tracking-tight leading-tight text-zinc-900">
               Why Procure Through NOVA?
             </h2>
-            <p className="text-sm md:text-base text-zinc-500 max-w-md mx-auto leading-relaxed">
-              We connect home buyers and project developers directly with primary importer networks to optimize kitchen costs.
+            <p className="text-base md:text-lg text-zinc-650 leading-relaxed max-w-xl">
+              We connect home buyers and project developers directly with primary importer networks, bypassing showroom markups to optimize your kitchen costs.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="border border-zinc-200 p-8 bg-white space-y-4" style={{ borderRadius: "0px" }}>
-              <span className="font-mono text-zinc-350 text-3xl font-light">01</span>
-              <h3 className="text-xs font-bold text-zinc-800 uppercase tracking-widest">
-                Save Money on Imports
-              </h3>
-              <p className="text-sm leading-relaxed text-zinc-500 font-medium">
-                Bypass luxury retail showroom commissions. Sourced directly from Naif and Sharjah logistics yards, we pass wholesale cost savings straight to you.
-              </p>
-            </div>
-
-            <div className="border border-zinc-200 p-8 bg-white space-y-4" style={{ borderRadius: "0px" }}>
-              <span className="font-mono text-zinc-350 text-3xl font-light">02</span>
-              <h3 className="text-xs font-bold text-zinc-800 uppercase tracking-widest">
-                Guaranteed High Quality
-              </h3>
-              <p className="text-sm leading-relaxed text-zinc-500 font-medium">
-                All appliances are procured factory-sealed, 100% brand new, and carry a one-year official manufacturer warranty supported by regional service centers.
-              </p>
-            </div>
-
-            <div className="border border-zinc-200 p-8 bg-white space-y-4" style={{ borderRadius: "0px" }}>
-              <span className="font-mono text-zinc-350 text-3xl font-light">03</span>
-              <h3 className="text-xs font-bold text-zinc-800 uppercase tracking-widest">
-                Reliable DAKEEK Service
-              </h3>
-              <p className="text-sm leading-relaxed text-zinc-500 font-medium">
-                Complete engineering safety calibrations. DAKEEK specialists configure LPG/NG gas regulators, execute pressure safety tests, and issue compliance certification.
-              </p>
+          {/* 2. Top-Right: Supporting Visual Asset (Image) */}
+          <div className="relative border border-zinc-200 p-2 bg-white flex flex-col justify-center min-h-[300px]">
+            <div className="aspect-[16/10] relative overflow-hidden bg-zinc-150 w-full h-full">
+              <Image
+                src="/premium_hybrid_skillet.png"
+                alt="Direct Importer Pipeline Products"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
 
-          <div className="pt-12 flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <Link
-              href="/shop"
-              className="matte-button-solid px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
-            >
-              Browse Wholesale Catalog
-            </Link>
-            <Link
-              href="/contact"
-              className="matte-button px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
-            >
-              Request Wholesale Quote
-            </Link>
+          {/* 3. Bottom-Left: Supporting Specifications (LESS visual weight) */}
+          <div className="flex flex-col justify-center space-y-6 border-t border-zinc-200 pt-8 lg:pt-12">
+            <span className="text-[9px] tracking-wider font-bold text-zinc-400 uppercase">
+              Sourcing Benefits
+            </span>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-4">
+                <span className="font-mono text-zinc-350 text-xl font-bold">01</span>
+                <div>
+                  <h4 className="text-xs font-bold text-zinc-800 uppercase tracking-widest">Save Showroom Commissions</h4>
+                  <p className="text-xs md:text-sm text-zinc-500 leading-relaxed mt-0.5">
+                    Clearance channels from Naif and Sharjah depots save you up to 35%.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <span className="font-mono text-zinc-350 text-xl font-bold">02</span>
+                <div>
+                  <h4 className="text-xs font-bold text-zinc-800 uppercase tracking-widest">Guaranteed High Quality</h4>
+                  <p className="text-xs md:text-sm text-zinc-500 leading-relaxed mt-0.5">
+                    100% brand-new, factory-sealed appliances with official manufacturer warranty.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <span className="font-mono text-zinc-350 text-xl font-bold">03</span>
+                <div>
+                  <h4 className="text-xs font-bold text-zinc-800 uppercase tracking-widest">Certified DAKEEK Connection</h4>
+                  <p className="text-xs md:text-sm text-zinc-500 leading-relaxed mt-0.5">
+                    Gas leak safety sign-offs and high-power electric calibrations.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
+
+          {/* 4. Bottom-Right: Primary Sourcing Call-To-Action (CTAs) */}
+          <div className="flex flex-col justify-center items-center lg:items-end border-t border-zinc-200 pt-8 lg:pt-12 space-y-6">
+            <span className="text-[10px] tracking-wider font-bold text-zinc-400 uppercase hidden lg:block">
+              Immediate Sourcing Desk
+            </span>
+            <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md">
+              <Link
+                href="/shop"
+                className="matte-button-solid px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+              >
+                Browse Wholesale Catalog
+              </Link>
+              <Link
+                href="/contact"
+                className="matte-button px-8 py-4 text-xs font-bold uppercase tracking-widest text-center flex-1"
+              >
+                Request Wholesale Quote
+              </Link>
+            </div>
+          </div>
+
         </div>
       </section>
 
