@@ -166,7 +166,7 @@ export default function Checkout() {
   }
 
   return (
-    <div className="max-w-[1360px] mx-auto px-6 md:px-10 py-12 pt-36 lg:pt-32">
+    <div className="max-w-[1600px] mx-auto px-6 md:px-10 py-12 pt-36 lg:pt-32">
       <div className="mb-12 space-y-4">
         <span className="text-[10px] tracking-[0.25em] font-bold text-zinc-400 uppercase">
           Finalize Setup

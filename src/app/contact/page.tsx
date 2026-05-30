@@ -61,8 +61,8 @@ export default function ContactUs() {
       </section>
 
       {/* Section 2: Importer Coordinates (Cream background) - No image */}
-      <section className="border-b border-zinc-200 py-20 bg-[#FAF9F6] min-h-[70vh] flex flex-col justify-center">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+      <section className="border-b border-zinc-200 py-20 bg-[#FAF9F6] min-h-[100dvh] flex flex-col justify-center">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             <div className="lg:col-span-4 space-y-4">
               <span className="text-[10px] tracking-[0.25em] font-bold text-zinc-400 uppercase">
@@ -103,8 +103,8 @@ export default function ContactUs() {
       </section>
 
       {/* Section 3: DAKEEK Support Alliance (White background) - Text LEFT, Image RIGHT */}
-      <section className="border-b border-zinc-200 py-20 bg-white min-h-[70vh] flex flex-col justify-center">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+      <section className="border-b border-zinc-200 py-20 bg-white min-h-[100dvh] flex flex-col justify-center">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
               <span className="text-[10px] tracking-[0.25em] font-bold text-zinc-400 uppercase">
@@ -138,8 +138,8 @@ export default function ContactUs() {
       </section>
 
       {/* Section 4: Callback request form (Cream background) - No image */}
-      <section className="border-b border-zinc-200 py-20 bg-[#FAF9F6] min-h-[70vh] flex flex-col justify-center">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+      <section className="border-b border-zinc-200 py-20 bg-[#FAF9F6] min-h-[100dvh] flex flex-col justify-center">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-6 space-y-6">
               <span className="text-[10px] tracking-[0.25em] font-bold text-zinc-400 uppercase">
@@ -217,8 +217,8 @@ export default function ContactUs() {
       </section>
 
       {/* Section 5: Advisory Hours (White background) - Image LEFT, Text RIGHT */}
-      <section className="py-20 bg-white min-h-[70vh] flex flex-col justify-center">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
+      <section className="py-20 bg-white min-h-[100dvh] flex flex-col justify-center">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Image Column first */}
             <div className="lg:col-span-5 relative border border-zinc-200 p-2 bg-[#FAF9F6]">

@@ -1,7 +1,27 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+
+  const faqs = [
+    {
+      q: "What is the delivery timeline?",
+      a: "Standard collections from primary distributor depots are completed and delivered within 24 to 48 hours from payment clearance."
+    },
+    {
+      q: "Why is DAKEEK certification mandatory?",
+      a: "All high-power electric cookers and gas connections require a certified technical connection to satisfy Dubai Civil Defense safety regulations."
+    },
+    {
+      q: "Are products fully warrantied?",
+      a: "Yes. Every procured appliance is brand new, factory-sealed, and carries a one-year manufacturer warranty supported by official regional service centers."
+    }
+  ];
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Section 1: Editorial Hero Section (White background) - Clean, uniform layout */}
@@ -46,8 +66,8 @@ export default function Home() {
       </section>
 
       {/* Section 2: Brand Moat & Value Proposition (Cream background) - Uniform spacing */}
-      <section className="border-b border-zinc-200 bg-[#FAF9F6] min-h-[70vh] flex flex-col justify-center py-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+      <section className="border-b border-zinc-200 bg-[#FAF9F6] min-h-[100dvh] flex flex-col justify-center py-20">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
           <div className="text-center max-w-xl mx-auto mb-16 space-y-4">
             <h2 className="font-serif text-3xl md:text-4xl tracking-tight text-zinc-900">
               Our Sourcing Advantages
@@ -107,8 +127,8 @@ export default function Home() {
       </section>
 
       {/* Section 3: Category Grid Section (White background) - Visual category cards */}
-      <section className="border-b border-zinc-200 bg-white min-h-[70vh] flex flex-col justify-center py-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+      <section className="border-b border-zinc-200 bg-white min-h-[100dvh] flex flex-col justify-center py-20">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-16 gap-4">
             <div className="space-y-2">
               <span className="text-[10px] tracking-[0.2em] font-bold text-zinc-400 uppercase">
@@ -207,8 +227,8 @@ export default function Home() {
       </section>
 
       {/* Section 4: The DAKEEK Customer Journey Process (Cream background) - Uniform spacing */}
-      <section className="border-b border-zinc-200 bg-[#FAF9F6] min-h-[70vh] flex flex-col justify-center py-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+      <section className="border-b border-zinc-200 bg-[#FAF9F6] min-h-[100dvh] flex flex-col justify-center py-20">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
             <h2 className="font-serif text-3xl md:text-4xl tracking-tight text-zinc-900">
               The Procurement Process
@@ -278,8 +298,8 @@ export default function Home() {
       </section>
 
       {/* Section 5: Sourcing & Compliance FAQs (White background) - Text on LEFT, Image on RIGHT */}
-      <section className="py-20 bg-white min-h-[70vh] flex flex-col justify-center">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+      <section className="py-20 bg-white min-h-[100dvh] flex flex-col justify-center">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* FAQs Column */}
             <div className="lg:col-span-7 space-y-8">
@@ -296,26 +316,34 @@ export default function Home() {
               </div>
 
               <div className="space-y-4">
-                <div className="border border-zinc-200 p-6 bg-white hover:border-zinc-950 transition-all duration-300 space-y-2" style={{ borderRadius: "0px" }}>
-                  <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-widest">What is the delivery timeline?</h4>
-                  <p className="text-xs md:text-sm leading-relaxed text-zinc-600 font-medium">
-                    Standard collections from primary distributor depots are completed and delivered within <strong className="font-bold text-zinc-900">24 to 48 hours</strong> from payment clearance.
-                  </p>
-                </div>
-
-                <div className="border border-zinc-200 p-6 bg-white hover:border-zinc-950 transition-all duration-300 space-y-2" style={{ borderRadius: "0px" }}>
-                  <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-widest">Why is DAKEEK certification mandatory?</h4>
-                  <p className="text-xs md:text-sm leading-relaxed text-zinc-600 font-medium">
-                    All high-power electric cookers and gas connections require a <strong className="font-bold text-zinc-900">certified technical connection</strong> to satisfy Dubai Civil Defense safety regulations.
-                  </p>
-                </div>
-
-                <div className="border border-zinc-200 p-6 bg-white hover:border-zinc-950 transition-all duration-300 space-y-2" style={{ borderRadius: "0px" }}>
-                  <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-widest">Are products fully warrantied?</h4>
-                  <p className="text-xs md:text-sm leading-relaxed text-zinc-650 font-medium">
-                    Yes. Every procured appliance is brand new, factory-sealed, and carries a <strong className="font-bold text-zinc-900">one-year manufacturer warranty</strong> supported by official regional service centers.
-                  </p>
-                </div>
+                {faqs.map((faq, idx) => {
+                  const isOpen = activeFaq === idx;
+                  return (
+                    <div
+                      key={idx}
+                      className="border border-zinc-200 bg-white hover:border-zinc-950 transition-all duration-300"
+                      style={{ borderRadius: "0px" }}
+                    >
+                      <button
+                        onClick={() => setActiveFaq(isOpen ? null : idx)}
+                        className="w-full flex items-center justify-between p-6 text-left focus:outline-none cursor-pointer group"
+                      >
+                        <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-widest group-hover:text-zinc-950 transition-colors">
+                          {faq.q}
+                        </h4>
+                        <span className={`text-base font-mono text-zinc-400 transition-transform duration-300 transform ${isOpen ? "rotate-45 text-zinc-950" : ""}`}>
+                          +
+                        </span>
+                      </button>
+                      
+                      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-[200px] border-t border-zinc-100" : "max-h-0"}`}>
+                        <p className="p-6 text-xs md:text-sm leading-relaxed text-zinc-650 font-medium bg-zinc-50/50">
+                          {faq.a}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
 
               <div className="pt-8 flex flex-col sm:flex-row gap-4 max-w-md">

@@ -15,6 +15,18 @@ function ShopCatalog() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedBrand, setSelectedBrand] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+
+  const faqs = [
+    {
+      q: "Do you deliver outside Dubai?",
+      a: "Yes. We coordinate transport across Abu Dhabi, Sharjah, Ajman, and Ras Al Khaimah."
+    },
+    {
+      q: "Can I collect the appliance?",
+      a: "Yes. You can coordinate physical collection directly from our partner warehouses in Sharjah."
+    }
+  ];
 
   // Sync with search params
   useEffect(() => {
@@ -102,8 +114,8 @@ function ShopCatalog() {
       </section>
 
       {/* Section 2: Main Catalog Search & Filter Layout (Cream background) */}
-      <section id="catalog-section" className="border-b border-zinc-200 py-12 md:py-20 bg-[#FAF9F6] min-h-[70vh] flex flex-col justify-center">
-        <div className="max-w-7xl mx-auto px-4 md:px-12 w-full">
+      <section id="catalog-section" className="border-b border-zinc-200 py-12 md:py-20 bg-[#FAF9F6] min-h-[100dvh] flex flex-col justify-center">
+        <div className="max-w-[1600px] mx-auto px-4 md:px-12 w-full">
           {/* Subheader / Status Bar */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-zinc-200 mb-6 gap-2">
             <div className="space-y-1">
@@ -339,8 +351,8 @@ function ShopCatalog() {
       </section>
 
       {/* Section 3: Sourcing Guidelines (White background) - Image LEFT, Text RIGHT */}
-      <section className="border-b border-zinc-200 py-20 bg-white min-h-[70vh] flex flex-col justify-center">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+      <section className="border-b border-zinc-200 py-20 bg-white min-h-[100dvh] flex flex-col justify-center">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Image Column first */}
             <div className="lg:col-span-5 relative border border-zinc-200 p-2 bg-[#FAF9F6]">
@@ -404,8 +416,8 @@ function ShopCatalog() {
       </section>
 
       {/* Section 4: DAKEEK Setup (Cream background) - No image */}
-      <section className="border-b border-zinc-200 py-20 bg-[#FAF9F6] min-h-[70vh] flex flex-col justify-center">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+      <section className="border-b border-zinc-200 py-20 bg-[#FAF9F6] min-h-[100dvh] flex flex-col justify-center">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7 space-y-6">
               <span className="text-[10px] tracking-[0.25em] font-bold text-zinc-400 uppercase">
@@ -449,8 +461,8 @@ function ShopCatalog() {
       </section>
 
       {/* Section 5: Delivery & Sourcing FAQ (White background) - Text LEFT, Image RIGHT */}
-      <section className="py-20 bg-white min-h-[70vh] flex flex-col justify-center">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+      <section className="py-20 bg-white min-h-[100dvh] flex flex-col justify-center">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* FAQ Column */}
             <div className="lg:col-span-7 space-y-6">
@@ -466,20 +478,35 @@ function ShopCatalog() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="border border-zinc-200 p-6 bg-white hover:border-zinc-950 transition-all duration-300 space-y-2" style={{ borderRadius: "0px" }}>
-                  <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-widest">Do you deliver outside Dubai?</h4>
-                  <p className="text-xs md:text-sm leading-relaxed text-zinc-650 font-medium">
-                    Yes. We coordinate transport across Abu Dhabi, Sharjah, Ajman, and Ras Al Khaimah.
-                  </p>
-                </div>
-
-                <div className="border border-zinc-200 p-6 bg-white hover:border-zinc-950 transition-all duration-300 space-y-2" style={{ borderRadius: "0px" }}>
-                  <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-widest">Can I collect the appliance?</h4>
-                  <p className="text-xs md:text-sm leading-relaxed text-zinc-650 font-medium">
-                    Yes. You can coordinate physical collection directly from our partner warehouses in Sharjah.
-                  </p>
-                </div>
+              <div className="space-y-4">
+                {faqs.map((faq, idx) => {
+                  const isOpen = activeFaq === idx;
+                  return (
+                    <div
+                      key={idx}
+                      className="border border-zinc-200 bg-white hover:border-zinc-950 transition-all duration-300"
+                      style={{ borderRadius: "0px" }}
+                    >
+                      <button
+                        onClick={() => setActiveFaq(isOpen ? null : idx)}
+                        className="w-full flex items-center justify-between p-6 text-left focus:outline-none cursor-pointer group"
+                      >
+                        <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-widest group-hover:text-zinc-950 transition-colors">
+                          {faq.q}
+                        </h4>
+                        <span className={`text-base font-mono text-zinc-400 transition-transform duration-300 transform ${isOpen ? "rotate-45 text-zinc-950" : ""}`}>
+                          +
+                        </span>
+                      </button>
+                      
+                      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-[200px] border-t border-zinc-100" : "max-h-0"}`}>
+                        <p className="p-6 text-xs md:text-sm leading-relaxed text-zinc-650 font-medium bg-zinc-50/50">
+                          {faq.a}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
@@ -504,7 +531,7 @@ function ShopCatalog() {
 export default function Shop() {
   return (
     <Suspense fallback={
-      <div className="max-w-[1360px] mx-auto px-6 md:px-10 py-24 text-center text-xs uppercase tracking-widest text-zinc-400">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-10 py-24 text-center text-xs uppercase tracking-widest text-zinc-400">
         Loading Catalog...
       </div>
     }>

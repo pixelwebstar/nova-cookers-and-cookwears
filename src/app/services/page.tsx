@@ -82,8 +82,8 @@ export default function Services() {
       </section>
 
       {/* Section 2: Certified Setup Packages (Cream background) - No image */}
-      <section className="border-b border-zinc-200 py-20 bg-[#FAF9F6] min-h-[70vh] flex flex-col justify-center">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+      <section className="border-b border-zinc-200 py-20 bg-[#FAF9F6] min-h-[100dvh] flex flex-col justify-center">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
           <div className="mb-10 space-y-2">
             <h2 className="font-serif text-3xl text-zinc-900">Certified Setup Packages</h2>
             <p className="text-sm text-zinc-500 leading-relaxed font-semibold">Flat-rate technical connections for newly sourced kitchen hardware.</p>
@@ -136,8 +136,8 @@ export default function Services() {
       </section>
 
       {/* Section 3: Annual Maintenance Contracts (AMC) (White background) - Text LEFT, Image RIGHT */}
-      <section className="border-b border-zinc-200 py-20 bg-white min-h-[70vh] flex flex-col justify-center">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+      <section className="border-b border-zinc-200 py-20 bg-white min-h-[100dvh] flex flex-col justify-center">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Title & Cards Column */}
             <div className="lg:col-span-7 space-y-6">
@@ -198,8 +198,8 @@ export default function Services() {
       </section>
 
       {/* Section 4: Safety Compliance Checklist (Cream background) - No image */}
-      <section className="border-b border-zinc-200 py-20 bg-[#FAF9F6] min-h-[70vh] flex flex-col justify-center">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+      <section className="border-b border-zinc-200 py-20 bg-[#FAF9F6] min-h-[100dvh] flex flex-col justify-center">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             <div className="lg:col-span-4 space-y-4">
               <span className="text-[10px] tracking-[0.25em] font-bold text-zinc-400 uppercase">
@@ -267,8 +267,8 @@ export default function Services() {
       </section>
 
       {/* Section 5: Booking Form Block (White background) - Image LEFT, Form RIGHT */}
-      <section id="booking-section" className="py-20 bg-white min-h-[70vh] flex flex-col justify-center">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+      <section id="booking-section" className="py-20 bg-white min-h-[100dvh] flex flex-col justify-center">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch bg-white border border-zinc-200 p-6 md:p-10">
             {/* Image Column first - purely ONLY the image container block */}
             <div className="lg:col-span-5 relative border border-zinc-200 p-2 bg-[#FAF9F6] flex flex-col justify-center">

@@ -12,7 +12,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-zinc-200 bg-[#FAF9F6] py-16 mt-auto">
-      <div className="max-w-[1360px] mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-4 gap-12">
         {/* Company Info */}
         <div className="md:col-span-2">
           <Link href="/" className="flex flex-col mb-4">
@@ -69,7 +69,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-[1360px] mx-auto px-6 md:px-10 mt-16 pt-8 border-t border-zinc-200 flex flex-col md:flex-row items-center justify-between text-xs text-zinc-400 font-sans tracking-wide">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-10 mt-16 pt-8 border-t border-zinc-200 flex flex-col md:flex-row items-center justify-between text-xs text-zinc-400 font-sans tracking-wide">
         <p>© 2026 NOVA Cookers &amp; Cookstove Trading LLC. All Rights Reserved.</p>
         <p className="mt-4 md:mt-0 uppercase font-semibold tracking-widest text-[10px] text-zinc-500">Dubai Mainland, United Arab Emirates</p>
       </div>

@@ -78,7 +78,7 @@ export default function ProductDetails({ params }: PageProps) {
   };
 
   return (
-    <div className="max-w-[1360px] mx-auto px-6 md:px-10 py-12 pt-36 lg:pt-32">
+    <div className="max-w-[1600px] mx-auto px-6 md:px-10 py-12 pt-36 lg:pt-32">
       {/* Breadcrumbs */}
       <nav className="mb-8 text-[10px] tracking-widest font-bold text-zinc-400 uppercase flex items-center space-x-2">
         <Link href="/" className="hover:text-zinc-900">Home</Link>

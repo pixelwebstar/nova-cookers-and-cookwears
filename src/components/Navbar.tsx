@@ -36,7 +36,7 @@ export default function Navbar() {
   return (
     <header className="border-b border-zinc-200 bg-[#FAF9F6] fixed top-0 left-0 right-0 z-40">
       {/* First Row: Logo on Left, Cart Button on Right (Desktop + Mobile) */}
-      <div className="max-w-[1360px] mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="group flex flex-col justify-center">
           <span className="font-serif text-2xl tracking-[0.25em] font-extrabold text-zinc-900 leading-none">NOVA</span>
@@ -72,7 +72,7 @@ export default function Navbar() {
 
       {/* Second Row: Horizontal Scrolling Navigation List (only visible on mobile/tablet) */}
       <div className="lg:hidden w-full bg-white border-t border-zinc-150 relative z-10">
-        <div className="max-w-[1360px] mx-auto px-4">
+        <div className="max-w-[1600px] mx-auto px-4">
           <div className="flex w-full items-center divide-x divide-zinc-200 overflow-x-auto py-3 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: "none" }}>
             {navLinks.map((link) => (
               <Link
